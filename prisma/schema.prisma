@@ -1,0 +1,20 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+model Sneakers {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  pathImg String
+  price Float
+  isFavorite Boolean @default(false)
+  isBasket Boolean  @default(false)
+}
+
+
+
